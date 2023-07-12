@@ -1,10 +1,21 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import logo from '../assets/logo.png';
+import '../styles/footer.css';
+import whiteLogo from '../assets/logo-white.png';
 
-const Footer =() => {
-    return('FOOTER')
-}
+const Footer = () => {
+  return (
+    <div className="footer-container">
+      <div className="footer-logo">
+        <img
+          src={whiteLogo}
+          alt="kasa, site de location d'appartements entre particuliers"
+        />
+      </div>
+      <div className="footer-copyright">© 2020 Kasa. All rights reserved</div>
+    </div>
+  );
+};
 
 export default Footer;

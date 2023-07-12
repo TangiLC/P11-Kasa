@@ -18,7 +18,6 @@ root.render(
 
       <Footer />
     </Router>
-  </React.StrictMode>,
-  document.getElementById('root')
+  </React.StrictMode>
 );
 
