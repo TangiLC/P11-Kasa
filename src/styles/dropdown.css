@@ -1,0 +1,11 @@
+.drop-container{
+    width:100%;
+    border:1px solid purple;
+}
+.drop-label{
+    background-color: var(--borderColor);
+    color: var(--textLightColor);
+}
+.drop-content{
+    color: var(--textDarkColor);
+}

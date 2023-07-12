@@ -15,7 +15,7 @@ function App() {
 
   return (
     <Routes>
-            
+            <Route path="/About" element={<About />} />
             <Route path="*" element={<Page404 />} />
         </Routes>
   );
@@ -30,4 +30,4 @@ export { SearchQuery};
             <Route path="/HomePage" element={<HomePage />} />
             <Route path="/Logement" element={<HomePage />} />
             <Route path="/Logement/:id" element={<Logement />} />
-            <Route path="/About" element={<About />} />*/
+            */

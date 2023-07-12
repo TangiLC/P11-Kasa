@@ -5,6 +5,8 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
+  position:absolute;
+  bottom:.3rem;
 }
 .footer-logo img {
   width: 120px;
@@ -14,6 +16,6 @@
   margin-top: 60px;
 }
 .footer-copyright {
-  color: white;
+  color: var(--textLightColor);
   margin: 30px;
 }
