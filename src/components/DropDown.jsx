@@ -12,6 +12,14 @@ const DropDown = (props) => {
     e.preventDefault();
     setIsOpen(!isOpen);
   }
+  const processContent=(cont) =>{
+    if (typeof cont === "string") {
+      return cont;
+    } 
+    else if (Array.isArray(cont)) {
+      return ("<ul><li>"+cont.join("</li><li>")+"</li></ul>");
+    }
+  }
 
   return (
     <div className="drop-container"> 
@@ -22,7 +30,9 @@ const DropDown = (props) => {
       </div>
     </div>
     <div className={isOpen?"drop-open":"drop-closed"}>
-      {props.content}
+    <span dangerouslySetInnerHTML={{__html: processContent(props.content)}} />
+      
+      
     </div>
         
     </div>

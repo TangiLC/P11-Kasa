@@ -11,6 +11,10 @@
   border-radius: 4px;
 }
 
+ul{
+    list-style-type: none;  
+}
+
 .arrow-open {
   transform: rotate(180deg);
 }
