@@ -6,7 +6,7 @@ import '../styles/dropdown.css';
 const DropDown = (props) => {
 
   return (
-    <div className="drop-container">
+    <div className="drop-container"> /*key*/
     <div className="drop-label">
       {props.label}
     </div>
