@@ -5,33 +5,53 @@ import '../styles/about.css';
 import TopPicture from '../components/TopPicture';
 import DropDown from '../components/DropDown';
 import about from '../assets/about.png';
-import aboutContent from '../data/about.json';
+import Loader from '../components/Loader';
 
 const About = () => {
-  console.log({ aboutContent });
-  console.log();
+  const [isLoading, setIsLoading] = useState(true);
+  const [aboutData, setAboutData] = useState([]);
+
+  useEffect(() => {
+    const fetchData = () => {
+      fetch('../data/about.json')
+        .then((resp) => resp.json())
+        .then((json) => setAboutData(json.data))
+        .then(console.log(aboutData))
+        .then(()=>{if(aboutData.length!==0){setIsLoading(false)}})
+      .catch ((err) =>(console.error('Erreur de fetch :', err)));
+    };
+
+    fetchData()},[aboutData])
+  
 
   return (
     <>
-      <TopPicture src={about} text={""} />
-      <br/><br/><br/><br/><br/><br/><br/><br/>
-      <br/><br/><br/><br/><br/><br/><br/><br/>
-      <DropDown
-        label={Object.keys(aboutContent[0])}
-        content={Object.values(aboutContent[0])}
-      />
-      <DropDown
-        label={Object.keys(aboutContent[1])}
-        content={Object.values(aboutContent[1])}
-      />
-      <DropDown
-        label={Object.keys(aboutContent[2])}
-        content={Object.values(aboutContent[2])}
-      />
-      <DropDown
-        label={Object.keys(aboutContent[3])}
-        content={Object.values(aboutContent[3])}
-      />
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <>
+          <div className="top-picture">
+            <TopPicture src={about} text={''} />
+          </div>
+          <div className=""></div>
+          <DropDown
+            label={(aboutData[0])}
+            content={(aboutData[0])}
+          />
+          <DropDown
+            label={(aboutData[1])}
+            content={(aboutData[1])}
+          />
+          <DropDown
+            label={(aboutData[2])}
+            content={(aboutData[2])}
+          />
+          <DropDown
+            label={(aboutData[3])}
+            content={(aboutData[3])}
+          />
+        </>
+      )}
     </>
   );
 };
