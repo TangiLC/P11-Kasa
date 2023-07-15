@@ -13,10 +13,10 @@ const DropDown = (props) => {
     setIsOpen(!isOpen);
   }
   const processContent=(cont) =>{
-    if (typeof cont === "string") {
+    if (typeof(cont)!=="object") {
       return cont;
     } 
-    else if (Array.isArray(cont)) {
+    else {
       return ("<ul><li>"+cont.join("</li><li>")+"</li></ul>");
     }
   }
