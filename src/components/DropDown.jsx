@@ -6,7 +6,7 @@ import '../styles/dropdown.css';
 
 const DropDown = (props) => {
 
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(props.initOpen)
 
   function handleDropDown(e) {
     e.preventDefault();
@@ -29,13 +29,13 @@ const DropDown = (props) => {
       <img src={arrow}  alt="cliquer pour modifier la vue"></img>
       </div>
     </div>
-    <div className={isOpen?"drop-open":"drop-closed"}>
-    <span dangerouslySetInnerHTML={{__html: processContent(props.content)}} />
+    <div className={isOpen?"drop-open":"drop-closed"}
+     dangerouslySetInnerHTML={{__html: processContent(props.content)}} />
       
       
     </div>
         
-    </div>
+    
   );
 };
 

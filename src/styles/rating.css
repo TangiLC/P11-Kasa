@@ -1,0 +1,23 @@
+.rating-container {
+  display: flex;
+  flex-direction: row;
+  gap: .5rem;
+}
+
+.rating-solid-star {
+  height: 1.1rem;
+}
+
+.rating-solid-star img {
+  height: 1.1rem;
+  width: auto;
+  color: var(--textColor);
+  filter: brightness(0) saturate(100%) invert(59%) sepia(43%) saturate(6778%) hue-rotate(328deg) brightness(113%) contrast(101%);
+}
+
+.rating-empty-star img {
+  height: 1.1rem;
+  width: auto;
+  color: var(--textDarkColor);
+  filter: brightness(0) saturate(100%) invert(98%) sepia(3%) saturate(3407%) hue-rotate(292deg) brightness(147%) contrast(78%);
+}

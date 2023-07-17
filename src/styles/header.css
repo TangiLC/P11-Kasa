@@ -86,12 +86,8 @@
     position: absolute;
     top: 7px;
     right: 7px;
-    background: var(--borderColor);
-    background: linear-gradient(
-      270deg,
-      var(--borderColor) 0%,
-      var(--bgGreyColor) 40%
-    );
+    background: var(--bgGreyColor);
+    opacity:1;
     padding: 10px;
   }
 

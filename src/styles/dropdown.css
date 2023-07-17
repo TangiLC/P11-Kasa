@@ -16,7 +16,7 @@ ul{
 }
 
 .arrow-open {
-  transform: rotate(180deg);
+  transform: rotate(180deg) translateY(5px);
 }
 .drop-label:hover,
 .arrow-closed:hover {

@@ -17,17 +17,18 @@
   margin-bottom: 1rem;
   border-radius: 6px;
   text-decoration: none;
+  box-shadow: 4px 8px 4px #888888;
 }
 
 @media (max-width: 768px) {
   .thumb {
     width: 48%;
-    height: 18rem;
+    height: 17rem;
   }
 }
 @media (max-width: 480px) {
     .thumb {
       width: 98%;
-      height: 16rem;
+      height: 14rem;
     }
   }

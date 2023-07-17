@@ -17,6 +17,7 @@ function App() {
       <Route path="/" element={<HomePage />} />
       <Route path="/HomePage" element={<HomePage />} />
       <Route path="/Logement" element={<HomePage />} />
+      <Route path="/Logement/:id" element={<Logement />} />
       <Route path="/About" element={<About />} />
       <Route path="*" element={<Page404 />} />
     </Routes>
@@ -26,8 +27,4 @@ function App() {
 export default App;
 export { SearchQuery };
 
-/*
-<Route path="/" element={<HomePage />} />
-          
-            <Route path="/Logement/:id" element={<Logement />} />
-            */
+

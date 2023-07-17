@@ -1,33 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
+import { FetchData } from '../tools/FetchData';
 import '../styles/homepage.css';
 
 import TopPicture from '../components/TopPicture';
 import Thumb from '../components/Thumb';
 import logement from '../assets/home.png';
-import Loader from '../components/Loader';
 
-const About = () => {
-  const [rentList, setRentList] = useState(); //const for the apartments contents
-  const [isLoading, setIsLoading] = useState(false); //boolean true while loading in progress
-  useEffect(() => {
-    function fetchData() {
-      setIsLoading(true);
-      let queryUrl = `data/logements.json`;
-      fetch(queryUrl)
-        .then((response) => response.json())
-        .then((json) => setRentList(json.data), setIsLoading(false))
-        .catch((error) => console.log('erreur de fetch :', error));
-    }
-    fetchData();
-  }, []);
+
+const HomePage = () => {
+
+  const { data } = FetchData('/data/logements.json');
+  console.log(data);
+
 
   return (
-    <>
-      {isLoading ? (
-        <Loader />
-      ) : (
+    
         <>
           <div className="top-picture">
             <TopPicture
@@ -37,13 +26,16 @@ const About = () => {
           </div>
 
           <div className="thumb-group">
-            {rentList &&
-              rentList.map((obj, index) => {
-                
+            {data &&
+              data.map((obj, index) => {
                 return (
-                  <NavLink key={`thumb#${index}`} to={`/Logement/${obj.id}`} className="thumb" >
+                  <NavLink
+                    key={`thumb#${index}`}
+                    to={`/Logement/${obj.id}`}
+                    className="thumb"
+                  >
                     <Thumb
-                      key={`${obj.tags[0].substring(0,5)}${obj.id}`}
+                      key={`${obj.tags[0].substring(0, 5)}${obj.id}`}
                       label={obj.title}
                       cover={obj.cover}
                     />
@@ -52,9 +44,9 @@ const About = () => {
               })}
           </div>
         </>
-      )}
-    </>
-  );
+      )
 };
 
-export default About;
+
+export default HomePage;
+
