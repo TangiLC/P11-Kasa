@@ -1,26 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
 import arrow from '../assets/arrow_down.svg';
 import blank from '../assets/_blank.png';
 
 import '../styles/caroussel.css';
 
 const Caroussel = (props) => {
-  const [current, setCurrent] = useState(0);
-
-  const nextSlide = () => {
-    setCurrent(current === props.pictList.length - 1 ? 0 : current + 1);
-  };
-  const prevSlide = () => {
-    setCurrent(current === 0 ? props.pictList.length - 1 : current - 1);
-  };
-
+  const [currentPic, setcurrentPic] = useState(0);
+  const [previous, setPrevious] = useState(props.pictList.length - 1);
+  const [next, setNext] = useState(1);
   const [imagePSrc, setImagePSrc] = useState(blank);
+
   const handlePreviousIn = () => {
-    let toggle =
-      current - 1 < 0
-        ? props.pictList[props.pictList.length - 1]
-        : props.pictList[current - 1];
-    setImagePSrc(toggle);
+    setPrevious(previous);
+    setImagePSrc(props.pictList[previous]);
   };
   const handlePreviousOut = () => {
     setImagePSrc(blank);
@@ -28,14 +21,30 @@ const Caroussel = (props) => {
 
   const [imageNSrc, setImageNSrc] = useState(blank);
   const handleNextIn = () => {
-    let toggle =
-      current + 1 > props.pictList.length
-        ? props.pictList[0]
-        : props.pictList[current + 1];
-    setImageNSrc(toggle);
+    setNext(next);
+    setImageNSrc(props.pictList[next]);
   };
   const handleNextOut = () => {
     setImageNSrc(blank);
+  };
+  
+
+  const nextSlide = () => {
+    setcurrentPic(
+      currentPic === props.pictList.length - 1 ? 0 : currentPic + 1
+    );
+    setPrevious(previous === props.pictList.length - 1 ? 0 : previous + 1);
+    setNext(next === props.pictList.length - 1 ? 0 : next + 1);
+    handleNextOut();
+  };
+
+  const prevSlide = () => {
+    setcurrentPic(
+      currentPic === 0 ? props.pictList.length - 1 : currentPic - 1
+    );
+    setPrevious(previous === 0 ? props.pictList.length - 1 : previous - 1);
+    setNext(next === 0 ? props.pictList.length - 1 : next - 1);
+    handlePreviousOut();
   };
 
   return (
@@ -45,7 +54,7 @@ const Caroussel = (props) => {
           props.pictList.map((pict, index) => (
             <div
               key={`imgdiv-${props.id}.${index}`}
-              className={index === current ? 'slide-active' : 'hide'}
+              className={index === currentPic ? 'slide-active' : 'hide'}
             >
               <img
                 key={`img-${props.id}.${index}`}
@@ -86,7 +95,7 @@ const Caroussel = (props) => {
             src={imagePSrc}
           />
           <div key={`pageCount${props.id}`} className="page-count">
-            {current + 1}/{props.pictList.length}
+            {currentPic + 1}/{props.pictList.length}
           </div>
           <img
             key={`next${props.id}`}
