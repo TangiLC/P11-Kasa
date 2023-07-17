@@ -1,5 +1,5 @@
-import logo from '../src/assets/logo.png';
-import React, { useState } from 'react';
+
+import React from 'react';
 import { useParams, Routes, Route } from 'react-router-dom';
 
 import HomePage from './pages/HomePage';
