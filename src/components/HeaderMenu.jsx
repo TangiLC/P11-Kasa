@@ -23,7 +23,7 @@ const HeaderMenu = () => {
       </div>
       <nav>
         <div
-          className={`nav-menu ${menuOpen ? '' : 'open'}`}
+          className={`nav-menu ${menuOpen ? 'open' : ''}`}
           onClick={toggleMenu}
         >
           <NavLink

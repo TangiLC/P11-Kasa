@@ -11,6 +11,10 @@
   width: 200px;
   height: auto;
 }
+nav{
+  align-self: center;
+  
+}
 
 .nav-burger {
   display: none;
@@ -20,9 +24,10 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 30%;
-  gap: 4%;
+  align-self:center;
+  gap: 20%;
 }
+
 .nav-menu a,
 .nav-menu a:visited {
   width: 8rem;

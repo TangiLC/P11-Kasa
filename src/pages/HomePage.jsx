@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { FetchData } from '../tools/FetchData';
 import '../styles/homepage.css';
@@ -12,7 +11,6 @@ import logement from '../assets/home.png';
 const HomePage = () => {
 
   const { data } = FetchData('/data/logements.json');
-  console.log(data);
 
 
   return (
