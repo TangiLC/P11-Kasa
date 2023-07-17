@@ -37,12 +37,32 @@
   filter: brightness(0) saturate(100%) invert(59%) sepia(43%) saturate(6778%)
     hue-rotate(328deg) brightness(113%) contrast(101%);
 }
-
-.pagination {
+.prev-next-layer {
   position: relative;
-  top: 12rem;
+  bottom: 12rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 96%;
+  margin: auto;
+}
+
+.page-count {
+  position: relative;
+  width: 20%;
+  display: inline-block;
+  align-self: flex-end;
   color: var(--textLightColor);
   font-size: 1rem;
+  text-align: center;
+}
+
+.prev-img {
+  height: 7.5rem;
+  width: 27%;
+  object-fit: cover;
+  filter: grayscale(70%);
+  border-radius: 6px;
 }
 
 @media (max-width: 480px) {
@@ -57,8 +77,15 @@
   .arrow-right {
     height: 3rem;
   }
+  .prev-next-layer {
+    bottom: 9rem;
+  }
+  .prev-img {
+    height: 5.5rem;
+    width: 30%;
+  }
 
-  .pagination {
+  .page-count {
     display: none;
   }
 }

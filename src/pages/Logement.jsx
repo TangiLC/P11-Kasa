@@ -13,6 +13,7 @@ const Logement = () => {
   if (logementId.id === undefined || isNaN(parseInt(logementId.id, 16))) {
     navigate('/Page404');
   }
+
   const [allData, setAllData] = useState([]);
   const [houseData, setHouseData] = useState({});
   useEffect(() => {
