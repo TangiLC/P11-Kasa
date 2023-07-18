@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import arrow from '../assets/arrow_down.svg';
+import arrow from '../../assets/arrow_down.svg';
 
-import '../styles/dropdown.css';
+import './dropdown.css';
 
 const DropDown = (props) => {
   const [isOpen, setIsOpen] = useState(props.initOpen);

@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
-import arrow from '../assets/arrow_down.svg';
-import blank from '../assets/_blank.png';
+import arrow from '../../assets/arrow_down.svg';
+import blank from '../../assets/_blank.png';
 
-import '../styles/caroussel.css';
+import './caroussel.css';
 
 const Caroussel = (props) => {
-  const [currentPic, setcurrentPic] = useState(0);
+  const [currentPic, setCurrentPic] = useState(0);
   const [previous, setPrevious] = useState(props.pictList.length - 1);
   const [next, setNext] = useState(1);
   const [imagePSrc, setImagePSrc] = useState(blank);
@@ -30,7 +30,7 @@ const Caroussel = (props) => {
   
 
   const nextSlide = () => {
-    setcurrentPic(
+    setCurrentPic(
       currentPic === props.pictList.length - 1 ? 0 : currentPic + 1
     );
     setPrevious(previous === props.pictList.length - 1 ? 0 : previous + 1);
@@ -39,7 +39,7 @@ const Caroussel = (props) => {
   };
 
   const prevSlide = () => {
-    setcurrentPic(
+    setCurrentPic(
       currentPic === 0 ? props.pictList.length - 1 : currentPic - 1
     );
     setPrevious(previous === 0 ? props.pictList.length - 1 : previous - 1);

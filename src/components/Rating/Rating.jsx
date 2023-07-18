@@ -1,7 +1,7 @@
 import React from 'react';
-import star from '../assets/star.svg';
+import star from '../../assets/star.svg';
 
-import '../styles/rating.css';
+import './rating.css';
 
 const Rating = (props) => {
   function Stars(mark, outOf) {

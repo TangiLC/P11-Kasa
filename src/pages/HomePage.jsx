@@ -3,8 +3,8 @@ import { NavLink } from 'react-router-dom';
 import { FetchData } from '../tools/FetchData';
 import '../styles/homepage.css';
 
-import TopPicture from '../components/TopPicture';
-import Thumb from '../components/Thumb';
+import TopPicture from '../components/TopPicture/TopPicture';
+import Thumb from '../components/Thumb/Thumb';
 import logement from '../assets/home.png';
 
 

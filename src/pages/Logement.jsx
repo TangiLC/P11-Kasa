@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import '../styles/logement.css';
 
-import DropDown from '../components/DropDown';
-import Loader from '../components/Loader';
-import Rating from '../components/Rating';
-import Caroussel from '../components/Caroussel';
+import DropDown from '../components/DropDown/DropDown';
+import Loader from '../components/Loader/Loader';
+import Rating from '../components/Rating/Rating';
+import Caroussel from '../components/Caroussel/Caroussel';
 
 const Logement = () => {
   const navigate = useNavigate();

@@ -1,7 +1,6 @@
-import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import React from 'react';
 
-import '../styles/thumb.css';
+import './thumb.css';
 
 const Thumb = (props) => {
   return (

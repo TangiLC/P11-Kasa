@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
-import logo from '../assets/logo.png';
-import '../styles/header.css';
+import logo from '../../assets/logo.png';
+import './header.css';
 
 const HeaderMenu = () => {
   const [menuOpen, setMenuOpen] = useState(false);

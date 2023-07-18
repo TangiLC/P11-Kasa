@@ -2,8 +2,8 @@ import React from 'react';
 import { FetchData } from '../tools/FetchData';
 import '../styles/about.css';
 
-import TopPicture from '../components/TopPicture';
-import DropDown from '../components/DropDown';
+import TopPicture from '../components/TopPicture/TopPicture';
+import DropDown from '../components/DropDown/DropDown';
 import about from '../assets/about.png';
 
 const About = () => {
