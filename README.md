@@ -10,18 +10,8 @@
 - [![Made-with-Javascript](https://img.shields.io/badge/Made%20with-Javascript-green)](https://developer.mozilla.org/fr/docs/Web/JavaScript)
 - [![React-v_17.0.2](https://img.shields.io/badge/React-v_17.24.1-blue)](https://fr.reactjs.org/)
 - [![React-Router-v_6.2.1](https://img.shields.io/badge/React_Router-v_6.2.1-yellow)](https://reactrouter.com/docs/en/v6)
-- [![Create-React-App](https://github.com/facebook/create-react-app)](https://github.com/facebook/create-react-app)
+- [![Create-React-App-v_5.0.1](https://img.shields.oi/badge/Create%20React%20App-v-5.0.1-blue)](https://github.com/facebook/create-react-app)
 - 
-## Environments
-
-
-
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=CathelineOnceUponATime_CathelineGrappin_11_28022022&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=CathelineOnceUponATime_CathelineGrappin_11_28022022)
-[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=CathelineOnceUponATime_CathelineGrappin_11_28022022&metric=reliability_rating)](https://sonarcloud.io/summary/new_code?id=CathelineOnceUponATime_CathelineGrappin_11_28022022)
-[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=CathelineOnceUponATime_CathelineGrappin_11_28022022&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=CathelineOnceUponATime_CathelineGrappin_11_28022022)  
-[![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=CathelineOnceUponATime_CathelineGrappin_11_28022022&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=CathelineOnceUponATime_CathelineGrappin_11_28022022)
-[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=CathelineOnceUponATime_CathelineGrappin_11_28022022&metric=bugs)](https://sonarcloud.io/summary/new_code?id=CathelineOnceUponATime_CathelineGrappin_11_28022022)
-[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=CathelineOnceUponATime_CathelineGrappin_11_28022022&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=CathelineOnceUponATime_CathelineGrappin_11_28022022)
 
 ## Resources provided
 
@@ -41,7 +31,7 @@ https://www.figma.com/file/bAnXDNqRKCRRP8mY2gcb5p/UI-Design-Kasa-FR
 
 Clone the repository of Kasa Front-End:
 
-`git clone https://github.com/CathelineOnceUponATime/CathelineGrappin_11_28022022.git`
+`git clone https://github.com/TangiLC/P11-Kasa
 
 Inside this repository, install dependencies:
 
