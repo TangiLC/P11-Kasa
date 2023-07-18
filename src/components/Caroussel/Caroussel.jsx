@@ -27,25 +27,16 @@ const Caroussel = (props) => {
   const handleNextOut = () => {
     setImageNSrc(blank);
   };
-  
 
-  const nextSlide = () => {
-    setCurrentPic(
-      currentPic === props.pictList.length - 1 ? 0 : currentPic + 1
-    );
-    setPrevious(previous === props.pictList.length - 1 ? 0 : previous + 1);
-    setNext(next === props.pictList.length - 1 ? 0 : next + 1);
-    handleNextOut();
-  };
-
-  const prevSlide = () => {
-    setCurrentPic(
-      currentPic === 0 ? props.pictList.length - 1 : currentPic - 1
-    );
+  const changeSlide =(plusMinus) => {
+    let changedSlide = currentPic +plusMinus;
+    if (changedSlide<0){changedSlide=props.pictList.length - 1}
+    if (changedSlide>props.pictList.length){changedSlide=0}
+    setCurrentPic(changedSlide);
     setPrevious(previous === 0 ? props.pictList.length - 1 : previous - 1);
     setNext(next === 0 ? props.pictList.length - 1 : next - 1);
-    handlePreviousOut();
-  };
+  }
+
 
   return (
     <>
@@ -71,7 +62,7 @@ const Caroussel = (props) => {
             className={props.pictList.length > 1 ? 'arrow-left' : 'hide'}
             src={arrow}
             alt="vue précédente"
-            onClick={prevSlide}
+            onClick={()=>{changeSlide(-1);handlePreviousOut()}}
             onMouseEnter={handlePreviousIn}
             onMouseLeave={handlePreviousOut}
           />
@@ -81,7 +72,7 @@ const Caroussel = (props) => {
             className={props.pictList.length > 1 ? 'arrow-right' : 'hide'}
             src={arrow}
             alt="vue suivante"
-            onClick={nextSlide}
+            onClick={()=>{changeSlide(1);handleNextOut()}}
             onMouseEnter={handleNextIn}
             onMouseLeave={handleNextOut}
           />
