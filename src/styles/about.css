@@ -1,0 +1,23 @@
+.top-picture{
+    position:relative;
+    width:100%;
+    margin-bottom:300px;
+}
+.drop-group{
+    position:relative;
+    display:flex;
+    flex-direction: column;
+    gap:.8rem;
+    width:80%;
+    margin:auto;
+    font-size: 1.25rem;
+}
+
+@media (max-width: 768px) {
+    .top-picture{
+        margin-bottom:170px;
+    }
+    .drop-group{
+        width:100%
+    }
+}

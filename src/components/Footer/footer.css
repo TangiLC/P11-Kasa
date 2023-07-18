@@ -1,0 +1,21 @@
+.footer-container {
+  margin-top: 2rem;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position:relative;
+  top: 2rem;
+}
+.footer-logo img {
+  width: 120px;
+  height: auto;
+}
+.footer-logo {
+  margin-top: 60px;
+}
+.footer-copyright {
+  color: var(--textLightColor);
+  margin: 30px;
+}

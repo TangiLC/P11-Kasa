@@ -1,0 +1,20 @@
+* {
+  --textLightColor:#ffffff;  
+  --textDarkColor:#666666;
+  --textColor: #ff6060;
+  --textHover: #ee1010;
+  --borderColor: #ff6060;
+  --bgGreyColor: #f6f6f6;
+  --bgHover:#ee5050;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    position:relative;
+    max-width: 1400px;
+    display:flex;
+    flex-direction: column;
+    justify-content:space-around;
+    margin:auto;
+    padding:0 5px 0 5px;
+}
