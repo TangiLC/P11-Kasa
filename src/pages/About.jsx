@@ -1,5 +1,5 @@
 import React from 'react';
-import { FetchData } from '../tools/FetchData';
+import { useFetchData } from '../tools/useFetchData';
 import '../styles/about.css';
 
 import TopPicture from '../components/TopPicture/TopPicture';
@@ -7,7 +7,7 @@ import DropDown from '../components/DropDown/DropDown';
 import about from '../assets/about.png';
 
 const About = () => {
-  const { data } = FetchData('/data/about.json');
+  const { data } = useFetchData('/data/about.json');
 
   return (
     <>

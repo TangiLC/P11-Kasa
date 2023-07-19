@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { FetchData } from '../tools/FetchData';
+import { useFetchData } from '../tools/useFetchData';
 import '../styles/homepage.css';
 
 import TopPicture from '../components/TopPicture/TopPicture';
@@ -10,7 +10,7 @@ import logement from '../assets/home.png';
 
 const HomePage = () => {
 
-  const { data } = FetchData(process.env.REACT_APP_dataUrl+'/logements.json');
+  const { data } = useFetchData(process.env.REACT_APP_dataUrl+'/logements.json');
 
 
   return (
