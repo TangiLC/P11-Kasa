@@ -10,7 +10,7 @@ import logement from '../assets/home.png';
 
 const HomePage = () => {
 
-  const { data } = FetchData('/data/logements.json');
+  const { data } = FetchData(process.env.REACT_APP_dataUrl+'/logements.json');
 
 
   return (

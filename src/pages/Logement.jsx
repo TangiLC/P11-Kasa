@@ -18,7 +18,7 @@ const Logement = () => {
   const [houseData, setHouseData] = useState({});
   useEffect(() => {
     const getData = () => {
-      fetch('/data/logements.json')
+      fetch('/data/logements.json')      
         .then((response) => response.json())
         .then((json) => setAllData(json.data))
         .then(

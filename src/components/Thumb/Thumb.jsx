@@ -2,7 +2,7 @@ import React from 'react';
 
 import './thumb.css';
 
-const Thumb = (props) => {
+const Thumb = (props) => {        //display picture and title above, complete with css
   return (
     <div
       className="thumb-container"

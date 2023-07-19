@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useParams, Routes, Route } from 'react-router-dom';
 
@@ -6,10 +5,6 @@ import HomePage from './pages/HomePage';
 import Logement from './pages/Logement';
 import About from './pages/About';
 import Page404 from './pages/Page404';
-
-function SearchQuery() {
-  return useParams();
-}
 
 function App() {
   return (
@@ -25,6 +20,3 @@ function App() {
 }
 
 export default App;
-export { SearchQuery };
-
-

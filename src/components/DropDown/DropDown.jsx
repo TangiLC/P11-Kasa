@@ -4,15 +4,15 @@ import arrow from '../../assets/arrow_down.svg';
 import './dropdown.css';
 
 const DropDown = (props) => {
-  const [isOpen, setIsOpen] = useState(props.initOpen);
+  const [isOpen, setIsOpen] = useState(props.initOpen);   //state of visible content
 
-  function handleDropDown(e) {
+  function handleDropDown(e) {                            //toggle state on click
     e.preventDefault();
     setIsOpen(!isOpen);
   }
-  const processContent = (cont) => {
-    if (typeof cont !== 'object') {
-      return cont;
+  const processContent = (cont) => {                      //display content as string or list if object
+    if (typeof cont !== 'object') {                       // (no other type should occur)
+      return cont; 
     } else {
       return '<ul><li>' + cont.join('</li><li>') + '</li></ul>';
     }

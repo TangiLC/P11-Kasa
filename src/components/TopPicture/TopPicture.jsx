@@ -2,7 +2,7 @@ import React from 'react';
 
 import './topPicture.css';
 
-const TopPicture = (props) => {
+const TopPicture = (props) => {      //display picture and #var props.text# title above, complete with css
 
   return (
     <>

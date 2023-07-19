@@ -12,7 +12,9 @@ const Footer = () => {
           alt="kasa, site de location d'appartements entre particuliers"
         />
       </div>
-      <div className="footer-copyright">© 2020 Kasa. All rights reserved</div>
+      <div className="footer-copyright">© 2020 Kasa. All rights reserved
+      <h1>kasa, site de location d'appartements entre particuliers</h1></div>
+
     </div>
   );
 };

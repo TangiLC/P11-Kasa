@@ -5,10 +5,10 @@ import logo from '../../assets/logo.png';
 import './header.css';
 
 const HeaderMenu = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);       //state of burger-menu for width<480px
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
+  const toggleMenu = () => {                             //toggle state on click
+    setMenuOpen(!menuOpen); 
   };
 
   return (

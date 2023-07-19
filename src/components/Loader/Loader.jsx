@@ -1,7 +1,7 @@
 import React from 'react';
 import './loader.css';
 
-const Loader = () => {
+const Loader = () => {                              //css styled spinner, 4 rotating divs of different speed
     return (
         <div className="container">
             <div className="loader-spin">
