@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { useFetchData } from '../tools/useFetchData';
 import '../styles/logement.css';
 
 import DropDown from '../components/DropDown/DropDown';
 import Loader from '../components/Loader/Loader';
 import Rating from '../components/Rating/Rating';
 import Caroussel from '../components/Caroussel/Caroussel';
-
-import genericUser from '../assets/user-regular.svg';
+import HouseTitle from '../components/HouseTitle/HouseTitle';
+import HouseOwner from '../components/HouseOwner/HouseOwner';
 
 const Logement = () => {
   const navigate = useNavigate();
   let logementId = useParams();
+
   if (logementId.id === undefined || isNaN(parseInt(logementId.id, 16))) {
     navigate('/Page404');
   }
@@ -20,10 +20,9 @@ const Logement = () => {
   const [allData, setAllData] = useState([]);
   const [houseData, setHouseData] = useState({});
 
-
- useEffect(() => {
+  useEffect(() => {
     const getData = () => {
-      fetch('/data/logements.json')      
+      fetch('/data/logements.json')
         .then((response) => response.json())
         .then((json) => setAllData(json.data))
         .then(
@@ -36,9 +35,7 @@ const Logement = () => {
         .catch((error) => console.log('erreur de fetch :', error));
     };
     getData();
-
   }, [allData, logementId.id]);
-
 
   if (!houseData || !houseData.length) {
     return (
@@ -59,36 +56,15 @@ const Logement = () => {
         </div>
 
         <div className="title-container">
-          <div className="house-title">
-            <h2 key={`title-${houseData[0].id}`}>{houseData[0].title}</h2>
-            {houseData[0].location}
-            <div key={`tagList-${houseData[0].id}`} className="house-tags-list">
-              {houseData[0].tags&& houseData[0].tags.map((elem, index) => {
-                return (
-                  <div className="tag-element" key={`elem${index}`}>
-                    {`${elem}`}
-                  </div>
-                );
-              })}
-            </div>
-          </div>
+          <HouseTitle
+            id={houseData[0].id}
+            title={houseData[0].title}
+            location={houseData[0].location}
+            tags={houseData[0].tags}
+          />
 
           <div className="house-infos">
-            <div className="house-owner">
-              <div
-                className="house-owner-name"
-                key={`owner-${houseData[0].id}`}
-              >
-                {houseData[0].host.name}
-              </div>
-              <div className="house-owner-pic">
-                <img
-                  key={`ownerPic-${houseData[0].id}`}
-                  src={houseData[0].host.picture?houseData[0].host.picture:genericUser}
-                  alt="portrait du propriétaire"
-                ></img>
-              </div>
-            </div>
+            <HouseOwner id={houseData[0].id} host={houseData[0].host} />
 
             <div className="house-rating">
               <Rating
@@ -108,7 +84,7 @@ const Logement = () => {
             initOpen={true}
           />
           <DropDown
-            unique={`equip${houseData[0].id}`} 
+            unique={`equip${houseData[0].id}`}
             key={`equip${houseData[0].id}`}
             label="Équipement"
             content={houseData[0].equipments}
