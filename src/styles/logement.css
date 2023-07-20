@@ -14,36 +14,7 @@
   margin: auto;
   padding: 5px;
 }
-.house-title {
-  display: flex;
-  flex-direction: column;
-  color: var(--textColor);
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-  width: 80%;
-}
-.house-title h2 {
-  font-size: 1.6rem;
-  font-weight: 600;
-  padding: 0;
-  margin: 0 0 16px 0;
-}
-.house-tags-list {
-  display: flex;
-  flex-direction: row;
-  width: 80%;
-  gap: 2%;
-  margin-top: 16px;
-}
-.tag-element {
-  background-color: var(--borderColor);
-  color: var(--textLightColor);
-  border-radius: 8px;
-  min-width: 10%;
-  padding: 2px;
-  text-align: center;
-  font-size: 0.7rem;
-}
+
 .house-infos {
   display: flex;
   flex-direction: column;
@@ -51,32 +22,7 @@
   justify-content: space-between;
   margin-bottom: 1rem;
 }
-.house-owner {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  align-items: flex-end;
-  margin-right: 10px;
-  width: 100%;
-}
-.house-owner-name {
-  color: var(--textColor);
-  font-size: 1.3rem;
-  display: flex;
-  flex-direction: column;
-  overflow: visible;
-  text-align: end;
-  padding-right: 8px;
-  flex-wrap: wrap-reverse;
-  width: 1%;
-}
-.house-owner-pic {
-  width: 3.1rem;
-}
-.house-owner-pic img {
-  border-radius: 50%;
-  height: 3rem;
-}
+
 .house-rating {
   display: flex;
   flex-direction: row;

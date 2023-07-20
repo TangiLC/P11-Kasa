@@ -12,7 +12,9 @@ const HeaderMenu = () => {
   };
 
   return (
+    <><div className="ref"><h1>kasa, site de location d'appartements entre particuliers</h1></div>
     <div className="header-menu">
+      
       <div className="logo">
         <NavLink to="/HomePage">
           <img
@@ -53,7 +55,7 @@ const HeaderMenu = () => {
         <div className="bar"></div>
         <div className="bar"></div>
       </div>
-    </div>
+    </div></>
   );
 };
 

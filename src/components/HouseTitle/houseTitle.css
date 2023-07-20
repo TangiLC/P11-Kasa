@@ -1,0 +1,30 @@
+.house-title {
+    display: flex;
+    flex-direction: column;
+    color: var(--textColor);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    width: 80%;
+  }
+  .house-title h2 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    padding: 0;
+    margin: 0 0 16px 0;
+  }
+  .house-tags-list {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    gap: 2%;
+    margin-top: 16px;
+  }
+  .tag-element {
+    background-color: var(--borderColor);
+    color: var(--textLightColor);
+    border-radius: 8px;
+    min-width: 10%;
+    padding: 2px;
+    text-align: center;
+    font-size: 0.7rem;
+  }

@@ -30,6 +30,7 @@ const HomePage = () => {
                   <NavLink
                     key={`thumb#${index}`}
                     to={`/Logement/${obj.id}`}
+                    data={obj}
                     className="thumb"
                   >
                     <Thumb

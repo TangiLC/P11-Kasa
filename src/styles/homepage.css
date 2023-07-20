@@ -25,6 +25,7 @@
     width: 48%;
     height: 17rem;
   }
+ 
 }
 @media (max-width: 480px) {
     .thumb {

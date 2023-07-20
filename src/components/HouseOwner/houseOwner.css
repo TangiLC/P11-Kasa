@@ -1,0 +1,26 @@
+.house-owner {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-right: 10px;
+    width: 100%;
+  }
+  .house-owner-name {
+    color: var(--textColor);
+    font-size: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+    text-align: end;
+    padding-right: 8px;
+    flex-wrap: wrap-reverse;
+    width: 1%;
+  }
+  .house-owner-pic {
+    width: 3.1rem;
+  }
+  .house-owner-pic img {
+    border-radius: 50%;
+    height: 3rem;
+  }
