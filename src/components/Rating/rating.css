@@ -4,18 +4,18 @@
   gap: .5rem;
 }
 
-.rating-solid-star {
+.rating-solid-vote {
   height: 1.1rem;
 }
 
-.rating-solid-star img {
+.rating-solid-vote img {
   height: 1.1rem;
   width: auto;
   color: var(--textColor);
   filter: brightness(0) saturate(100%) invert(59%) sepia(43%) saturate(6778%) hue-rotate(328deg) brightness(113%) contrast(101%);
 }
 
-.rating-empty-star img {
+.rating-empty-vote img {
   height: 1.1rem;
   width: auto;
   color: var(--textDarkColor);

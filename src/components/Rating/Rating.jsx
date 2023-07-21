@@ -1,21 +1,21 @@
 import React from 'react';
-import star from '../../assets/star.svg';
+import star from '../../assets/star.svg';  
 
 import './rating.css';
 
 const Rating = (props) => {
-  function Stars(mark, outOf) {            //return a node array of n-(mark)full stars out of N(outOf)empty stars
+  function Vote(mark, outOf) {            //return a node array of n-(mark)full icon out of N(outOf)empty icon
     let returnArray=[];
     for (let i = 1; i <= mark; i++) {
       returnArray.push(
-        <div className="rating-solid-star" key={`starS${i}`}>
+        <div className="rating-solid-vote" key={`voteS${i}`}>
           <img src={`${star}`} alt="good rating" />
         </div>
       );
     }
     for (let i = 1; i <= outOf - mark; i++) {
       returnArray.push(
-        <div className="rating-empty-star" key={`starE${i}`}>
+        <div className="rating-empty-vote" key={`voteE${i}`}>
           <img src={`${star}`} alt="could do better" />
         </div>
       );
@@ -25,7 +25,7 @@ const Rating = (props) => {
 
   return (
     <div className="rating-container">
-        {Stars(props.mark, props.outOf)}</div>
+        {Vote(props.mark, props.outOf)}</div>
   );
 };
 
