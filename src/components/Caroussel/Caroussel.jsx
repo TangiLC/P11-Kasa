@@ -46,7 +46,7 @@ const Caroussel = (props) => {
     if (changedSlide < 0) {
       changedSlide = props.pictList.length - 1;
     }
-    if (changedSlide > props.pictList.length) {
+    if (changedSlide >= props.pictList.length) {
       changedSlide = 0;
     }
     setCurrentPic(changedSlide);
