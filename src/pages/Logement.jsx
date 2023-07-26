@@ -3,11 +3,14 @@ import { useNavigate, useParams } from 'react-router-dom';
 import '../styles/logement.css';
 
 import DropDown from '../components/DropDown/DropDown';
-import Loader from '../components/Loader/Loader';
 import Rating from '../components/Rating/Rating';
 import Caroussel from '../components/Caroussel/Caroussel';
 import HouseTitle from '../components/HouseTitle/HouseTitle';
 import HouseOwner from '../components/HouseOwner/HouseOwner';
+import Page404 from './Page404';
+import Loader from '../components/Loader/Loader';
+
+
 
 const Logement = () => {
   const navigate = useNavigate();
@@ -19,9 +22,11 @@ const Logement = () => {
 
   const [allData, setAllData] = useState([]);
   const [houseData, setHouseData] = useState({});
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
     const getData = () => {
+      setIsLoading(true);
       fetch('/data/logements.json')
         .then((response) => response.json())
         .then((json) => setAllData(json.data))
@@ -30,7 +35,8 @@ const Logement = () => {
             allData.filter((data) => {
               return data.id === logementId.id;
             })
-          )
+          ),
+          setIsLoading(false)
         )
         .catch((error) => console.log('erreur de fetch :', error));
     };
@@ -38,11 +44,7 @@ const Logement = () => {
   }, [allData, logementId.id]);
 
   if (!houseData || !houseData.length) {
-    return (
-      <>
-        <Loader />
-      </>
-    );
+    return <>{isLoading ? <Loader /> : <Page404 />}</>;
   } else {
     return (
       <>

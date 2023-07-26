@@ -6,41 +6,52 @@ import blank from '../../assets/_blank.png';
 import './caroussel.css';
 
 const Caroussel = (props) => {
-  const [currentPic, setCurrentPic] = useState(0);                      //index of the current pict visible
-  const [previous, setPrevious] = useState(props.pictList.length - 1);  //index of previous pict
-  const [next, setNext] = useState(1);                                  //index of the next pict duh
-  const [imagePSrc, setImagePSrc] = useState(blank);                    //url of the miniature previous pict
-  const [imageNSrc, setImageNSrc] = useState(blank);                    //url of the miniature next pict
+  const [currentPic, setCurrentPic] = useState(0); //index of the current pict visible
+  const [previous, setPrevious] = useState(props.pictList.length - 1); //index of previous pict
+  const [next, setNext] = useState(1); //index of the next pict
+  const [imagePSrc, setImagePSrc] = useState(blank); //url of the miniature previous pict
+  const [imageNSrc, setImageNSrc] = useState(blank); //url of the miniature next pict
 
   useEffect(() => {
-   currentPic-1<0?setPrevious(props.pictList.length - 1):setPrevious(currentPic-1);
-   currentPic+1>props.pictList.length?setNext(0):setNext(currentPic+1);
-}, [currentPic,props.pictList])
+    currentPic - 1 < 0
+      ? setPrevious(props.pictList.length - 1)
+      : setPrevious(currentPic - 1);
+    currentPic + 1 > props.pictList.length
+      ? setNext(0)
+      : setNext(currentPic + 1);
+  }, [currentPic, props.pictList]);
 
-
-  const handlePreviousIn = () => {                   //change url of the previous pict
-    setPrevious(previous);
+  const handlePreviousIn = () => {
+    //change url of the previous pict
+    setPrevious({ ...previous });
     setImagePSrc(props.pictList[previous]);
   };
-  const handlePreviousOut = () => {                  //change url to blank img
+  const handlePreviousOut = () => {
+    //change url to blank img
+    
     setImagePSrc(blank);
   };
 
   const handleNextIn = () => {
-    setNext(next);
+    setNext({ ...next });
     setImageNSrc(props.pictList[next]);
   };
   const handleNextOut = () => {
     setImageNSrc(blank);
   };
 
-  const changeSlide =(plusMinus) => {              //change visible slide to previous (plusMinus=-1) or next (plusMinus=1)
-    let changedSlide = currentPic +plusMinus;
-    if (changedSlide<0){changedSlide=props.pictList.length - 1}
-    if (changedSlide>props.pictList.length){changedSlide=0}
+  const changeSlide = (plusMinus) => {
+    //change visible slide to previous (plusMinus=-1) or next (plusMinus=1)
+    let changedSlide = currentPic + plusMinus;
+    if (changedSlide < 0) {
+      changedSlide = props.pictList.length - 1;
+    }
+    if (changedSlide > props.pictList.length) {
+      changedSlide = 0;
+    }
     setCurrentPic(changedSlide);
-  }
-
+    
+  };
 
   return (
     <>
@@ -66,7 +77,10 @@ const Caroussel = (props) => {
             className={props.pictList.length > 1 ? 'arrow-left' : 'hide'}
             src={arrow}
             alt="vue précédente"
-            onClick={()=>{changeSlide(-1);handlePreviousOut()}}
+            onClick={() => {
+              changeSlide(-1);
+              handlePreviousOut();
+            }}
             onMouseEnter={handlePreviousIn}
             onMouseLeave={handlePreviousOut}
           />
@@ -76,7 +90,10 @@ const Caroussel = (props) => {
             className={props.pictList.length > 1 ? 'arrow-right' : 'hide'}
             src={arrow}
             alt="vue suivante"
-            onClick={()=>{changeSlide(1);handleNextOut()}}
+            onClick={() => {
+              changeSlide(1);
+              handleNextOut();
+            }}
             onMouseEnter={handleNextIn}
             onMouseLeave={handleNextOut}
           />
@@ -84,7 +101,7 @@ const Caroussel = (props) => {
 
         <div className="prev-next-layer">
           <img
-            key={`previous${props.id}`}
+            key={`previous${props.id}${currentPic}`}
             className="prev-img"
             alt="vue précédente"
             src={imagePSrc}
@@ -93,7 +110,7 @@ const Caroussel = (props) => {
             {currentPic + 1}/{props.pictList.length}
           </div>
           <img
-            key={`next${props.id}`}
+            key={`next${props.id}${currentPic}`}
             className="prev-img"
             alt="vue suivante"
             src={imageNSrc}

@@ -17,7 +17,13 @@
   margin-bottom: 1rem;
   border-radius: 6px;
   text-decoration: none;
-  box-shadow: 4px 8px 4px #888888;
+  box-shadow: 3px 6px 3px #888888;
+}
+
+.thumb:hover{
+  box-shadow: 4px 8px 4px black;
+  filter:brightness(110%);
+  font-weight: 600;
 }
 
 @media (max-width: 768px) {

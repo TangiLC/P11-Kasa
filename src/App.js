@@ -16,6 +16,7 @@ function App() {
       <Route path="/About" element={<About />} />
       <Route path="*" element={<Page404 />} />
     </Routes>
+    
   );
 }
 
