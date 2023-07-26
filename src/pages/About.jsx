@@ -21,7 +21,7 @@ const About = () => {
             const txt = Object.values(obj)[0];
             const uniqueKey = `${lbl.substring(0, 5)}-${index}`;
 
-            return <DropDown key={uniqueKey} unique={uniqueKey} label={lbl} content={txt} initOpen={false} />;
+            return <DropDown key={uniqueKey} unique={uniqueKey} label={lbl} content={txt} initOpen={index===0?true:false} />;
           })}
       </div>
     </>
